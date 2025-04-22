@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #1B1C1F;
+    --color-secondary: #242629;
+}
+
+@layer base {
+    * {
+        @apply
+        m-0 p-0 box-border
+    }
+
+    body {
+        direction: rtl;
+        @apply
+        bg-primary text-white overflow-x-hidden
+    }
+
+    .container-tag {
+        @apply
+        w-full px-4 lg:px-30
+    }
+
+    button {
+        @apply
+        cursor-pointer outline-none transition-colors duration-300
+    }
+
+    .auto-height {
+        @apply
+        grid grid-rows-[0fr] transition-all duration-300
+    }
+    .auto-height.open {
+        @apply
+        grid-rows-[1fr]
+    }
+    .auto-height > div {
+        @apply
+        overflow-hidden
+    }
+
+    .auto-height#menu {
+        @apply
+        px-4 lg:px-0
+    }
+    .auto-height.open#menu {
+        @apply
+        pb-2 lg:py-0
+    }
+
+    .auto-height#menu .item {
+        @apply
+        cursor-pointer hover:text-slate-400 transition-colors duration-300 font-bold text-[.875rem]
+    }
+
+    .header-icon {
+        @apply
+        w-10 aspect-square bg-primary flex justify-center items-center rounded-sm cursor-pointer
+        transition-colors duration-300 hover:bg-white hover:text-primary
+    }
+
+    .header-icon svg {
+        @apply
+        w-5 h-5
+    }
+
+    .page-btn {
+        @apply
+        h-12 bg-secondary py-3 px-4 rounded-[4px] hover:bg-white hover:text-secondary
+    }
+
+    .page-btn svg {
+        @apply
+        w-6 h-6
+    }
+
+    .resolution-select {
+        @apply
+        bg-secondary p-3 rounded-[8px] outline-none border-none
+    }
+
+    .player-mode {
+        @apply
+        bg-secondary p-3 rounded-[4px] text-[.75rem] text-center hover:!bg-white hover:text-primary
+    }
+
+    .more-like-this {
+        @apply
+        w-full flex flex-col justify-between gap-5 mt-5 lg:mt-0
+    }
+
+    .more-like-this .item {
+        @apply
+        w-full flex gap-1 cursor-pointer hover:bg-secondary transition-colors duration-300
+    }
+
+    .more-like-this .item .title {
+        @apply
+        font-bold
+    }
+
+    .more-like-this .item .desc {
+        @apply
+        text-[.875rem] opacity-50
+    }
+
+    .more-like-this .item .comments {
+        @apply
+        w-full flex justify-between items-center text-[.875rem] pl-4
+    }
+
+    .more-like-this .item .rates {
+        @apply
+        w-full flex justify-between items-center text-[.875rem] px-4
+    }
+
+    .more-like-this .item .more-movie-info {
+        @apply
+        w-full flex flex-col gap-[2px] justify-center
+    }
+
+    @media (min-width: 1024px) {
+        .auto-height#menu {
+            @apply
+            !grid-rows-[1fr]
+        }
+    }
+}
