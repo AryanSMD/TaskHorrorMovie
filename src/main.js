@@ -15,4 +15,6 @@ function loadComponent(id, htmlPath, jsPath) {
 
 window.addEventListener("DOMContentLoaded", () => {
     loadComponent('header', 'src/components/header.html', 'src/js/header.js');
+    loadComponent('movieInfo', 'src/components/movieInfo.html', null);
+    loadComponent('player', 'src/components/player.html', null);
 })
